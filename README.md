@@ -1,2 +1,3 @@
 # HelloADC
-ADC is MY amibition.
+ADC is MY ambition.
+ADC is my ambition,not is my amibition.
