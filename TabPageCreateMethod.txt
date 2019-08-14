@@ -1,0 +1,111 @@
+        private void GPSDataUserControl_Load(object sender, EventArgs e)
+        {
+            CreateTabPage();
+            tpGPS_Base.Parent = null;
+        }
+        ///创建TabPage方法
+        public void CreateTabPage()
+        {
+            for (int i = 0; i < 8; i++)
+            {
+                CreateControls(i);
+            }
+        }
+
+        private void CreateControls(int i)
+        {
+            TabPage tp = new TabPage(string.Format("GPS-{0}", i));
+            //笨办法
+            TableLayoutPanel table = new TableLayoutPanel();
+            tp.Controls.Add(table);
+            tp.Font = new Font("宋体", 10.5F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            tp.Location = new System.Drawing.Point(4, 22);
+            tp.Name = "tpGPS_Base";
+            tp.Padding = new System.Windows.Forms.Padding(3);
+            tp.Size = new System.Drawing.Size(489, 76);
+            tp.TabIndex = 0;
+            tp.UseVisualStyleBackColor = true;
+            table.Name = "tablePanel";
+            Label L1 = new Label();
+            Label L2 = new Label();
+            Label L3 = new Label();
+            Label L4 = new Label();
+            Label L5 = new Label();
+            Label L6 = new Label();
+
+            L4.AutoSize = true;
+            L4.Dock = DockStyle.Fill;
+            L4.Margin = new Padding(0);
+            L4.RightToLeft = RightToLeft.No;
+            L4.Size = new Size(161, 35);
+            L4.TabIndex = 5;
+            L4.TextAlign = ContentAlignment.MiddleCenter;
+
+            L5.AutoSize = true;
+            L5.Dock = DockStyle.Fill;
+            L5.Margin = new Padding(0);
+            L5.RightToLeft = RightToLeft.No;
+            L5.Size = new Size(161, 35);
+            L5.TabIndex = 5;
+            L5.TextAlign = ContentAlignment.MiddleCenter;
+
+            L6.AutoSize = true;
+            L6.Dock = DockStyle.Fill;
+            L6.Margin = new Padding(0);
+            L6.RightToLeft = RightToLeft.No;
+            L6.Size = new Size(161, 35);
+            L6.TabIndex = 5;
+            L6.TextAlign = ContentAlignment.MiddleCenter;
+
+            L1.AutoSize = true;
+            L1.Dock = DockStyle.Fill;
+            L1.Margin = new Padding(0);
+            L1.RightToLeft = RightToLeft.No;
+            L1.Size = new Size(161, 35);
+            L1.TabIndex = 5;
+            L1.TextAlign = ContentAlignment.MiddleCenter;
+            L1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(241)))), ((int)(((byte)(246)))), ((int)(((byte)(252)))));
+            L2.AutoSize = true;
+            L2.Dock = DockStyle.Fill;
+            L2.Margin = new Padding(0);
+            L2.RightToLeft = RightToLeft.No;
+            L2.Size = new Size(161, 35);
+            L2.TabIndex = 5;
+            L2.TextAlign = ContentAlignment.MiddleCenter;
+            L2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(241)))), ((int)(((byte)(246)))), ((int)(((byte)(252)))));
+            L3.AutoSize = true;
+            L3.Dock = DockStyle.Fill;
+            L3.Margin = new Padding(0);
+            L3.RightToLeft = RightToLeft.No;
+            L3.Size = new Size(161, 35);
+            L3.TabIndex = 5;
+            L3.TextAlign = ContentAlignment.MiddleCenter;
+            L3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(241)))), ((int)(((byte)(246)))), ((int)(((byte)(252)))));
+            L1.Text = "经度/°";
+            L2.Text = "纬度/°";
+            L3.Text = "高度/cm";
+            L4.Text = "0";
+            L5.Text = "0";
+            L6.Text = "0";
+            table.ColumnCount = 3;
+            table.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 33.33333F));
+            table.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 33.33333F));
+            table.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 33.33333F));
+            table.Controls.Add(L6, 2, 1);
+            table.Controls.Add(L5, 1, 1);
+            table.Controls.Add(L4, 0, 1);
+            table.Controls.Add(L3, 2, 0);
+            table.Controls.Add(L2, 1, 0);
+            table.Controls.Add(L1, 0, 0);
+            table.Dock = DockStyle.Fill;
+            table.Location = new Point(3, 3);
+            table.RightToLeft = RightToLeft.No;
+            table.RowCount = 2;
+            table.RowStyles.Add(new RowStyle(SizeType.Percent, 50F));
+            table.RowStyles.Add(new RowStyle(SizeType.Percent, 50F));
+            table.Size = new Size(483, 70);
+
+            table.TabIndex = i;
+            tp.Controls.Add(table);
+            tabControlAll.Controls.Add(tp);
+        }
